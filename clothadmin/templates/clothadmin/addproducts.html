@@ -1,0 +1,94 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      
+      table{
+        text-align: center;
+        padding-left: 200px;
+        position: relative;
+        left: 480px;
+        top: 100px;
+        border: 1px solid black;
+      
+        width: 300px;
+        height: 300px;
+        background-color: palevioletred;
+
+      }
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body style="background-color: pink;">
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid" >
+      <a class="navbar-brand" href="#" style="font-style: italic;">Hyla & Jackdaw</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{% url 'clothadmin:sdashboard' %}">Admin-Home</a>
+          </li>
+           <li class="nav-item">
+            <a class="nav-link" href="{% url 'clothadmin:adminlogin' %}" style="color: black;">Logout</a>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="#">Pricing</a>
+          </li>  -->
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <form action="" method="post" onsubmit="return validateForm()" enctype="multipart/form-data">
+    {% csrf_token %}
+   
+    <table>
+        <tr>
+        <th><h1 style="color: white;">Add Products</h1></th>
+        </tr>
+        <tr>
+        <th><input type="text" name="title" id="" placeholder="Title"></th>
+        </tr>
+        <tr>
+        <th><input type="text" name="description" id="" placeholder="Description"></th>
+        </tr>
+        <tr>
+          <th><input type="text" name="price" id="" placeholder="price"></th>
+          </tr>
+        <tr>
+          <th><input type="text" name="category" id="" placeholder="Category"></th>
+          </tr>
+        
+        <tr>
+          <tr>
+            <th><input type="file" name="image" id="" ></th>
+            </tr>
+          
+          <tr>
+        <th><button type="submit " style="background-color: blueviolet; color: white;">Save&Add</button></th>
+        <!-- <th><button type="submit" style="background-color: blueviolet; width: 50px; height: 50px;">Save & Add another</button></th> -->
+        </tr>
+        <tr>
+            <td><p id="Error" style="color:red;">{{msg}}</p></td>
+            </tr>
+       
+       
+  </table>
+        
+   
+</form>
+
+<script src="{% static 'script/alogin.js' %}"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    
+</body>
+</html>

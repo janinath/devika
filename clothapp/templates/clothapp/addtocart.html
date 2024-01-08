@@ -1,0 +1,112 @@
+{% extends 'clothapp/masterpage.html' %}
+{% load static %}
+
+{% block content %}
+
+<style>
+    .add{
+        background-color: palevioletred;
+        font-family: 'Times New Roman', Times, serif;
+        font-weight: bolder;
+    }
+
+    h2{
+        color: black;
+        padding-top: 20px;
+       
+    /* height: 20px; */
+   
+    }
+   
+   
+   input{
+    width: 50px;
+   }
+   
+   .tb{
+    margin-bottom: 80px;
+    
+   }
+   tr th{
+    padding-left: 130px;
+   }
+
+</style>
+
+<div class="add">
+    <h1>ADD TO CART</h1>
+</div>
+
+<div class="con">
+    <table class="tb">
+        <tr class="row1"  >
+        
+            <th><h2>Products</h2></th>
+            <th><h2>Price</h2></th>
+            <th><h2>Quantity</h2></th>
+            <th><h2>Delete</h2></th>
+        </tr>
+        <!-- <tr>
+            <th><img src="{% static 'images/jaw2.jpeg' %}" alt="" height="90px" width="140px"></th>
+            <th><h6>$100</h6></th>
+            <th><h6><input type="number" name="" id="" value="1"></h6></th>
+            <th><h6>$100</h6></th>
+        </tr>
+        <tr>
+            <th><img src="{% static 'images/nb.jpeg' %}" alt="" height="90px"></th>
+            <th><h6>$100</h6></th>
+            <th><h6><input type="number" name="" id="" value="1"></h6></th>
+            <th><h6>$100</h6></th>
+        </tr>
+
+        <tr>
+            <th><img src="{% static 'images/na2.jpeg' %}" alt="" height="90px"></th>
+            <th><h6>$100</h6></th>
+            <th><h6><input type="number" name="" id="" value="1"></h6></th>
+            <th><h6>$100</h6></th>
+        </tr>
+
+        <tr>
+            <th><img src="{% static 'images/na2.jpeg' %}" alt="" height="90px"></th>
+            <th><h6>$100</h6></th>
+            <th><h6><input type="number" name="" id="" value="1"></h6></th>
+            <th><h6>$100</h6></th>
+        </tr> -->
+        {% for item in cart_items %}
+        <tr>
+            <th><img src="{{item.product.image.url}}" alt="" height="90px"></th>
+            <th><h6>${{item.product.price}}</h6></th>
+            <th>{{item.quantity}}</th>
+            <th>
+                <form method="post" action="{% url 'clothapp:remove_from_cart' item.product.id %}">
+                    {% csrf_token %}
+                    
+                    <button type="submit" class="btn btn-danger" style="color:white;">Delete</button>
+            
+                  </form>
+        </tr>
+        
+        {% endfor %}
+        <tr>
+            <th><h2>Grand total</h2></th>
+            <th>{{total_price}}</th>
+        </tr>
+    </table>
+  
+
+
+    <tr><a class="btn btn-success btn-lg " href="{% url 'clothapp:payment' %}" style="color: white; background-color: palevioletred; position: relative; bottom: 90px; height: 40px;">Buy Now</a></tr>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

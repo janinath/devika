@@ -1,0 +1,48 @@
+.card-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+
+.card {
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+}
+
+.catbtn{
+  color:palevioletred;
+  text-decoration:underline;
+  
+}
+
+p{
+    font-family:'Times New Roman', Times, serif;
+}
+
+h3{
+    font-style: italic;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight:bolder;
+    color:palevioletred;
+}
+.animate-words{
+    display: inline-block;
+    white-space: nowrap;
+    animation:moveWords 5s linear infinite;
+}
+@keyframes moveWords{
+    0%{
+        transform: translateX(0%);
+    }
+    50%{
+        transform: translateX(100px);
+    }
+    100%{
+        transform: translateX(0%);
+    }
+}

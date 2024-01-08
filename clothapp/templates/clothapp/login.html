@@ -1,0 +1,85 @@
+{% extends 'clothapp/masterpage.html' %}
+{% load static %}
+
+{% block content %}
+<style>
+    h4{
+        color: white;
+        font-family: 'Times New Roman', Times, serif;
+        font-style: italic;
+        font-weight: lighter;
+    }
+    h5{
+        color: white;
+        font-family: 'Times New Roman', Times, serif;
+        font-style: italic;
+        font-weight: lighter;
+    }
+    h6{
+        color: white;
+    }
+    
+</style>
+
+<div class="main" style="background-image: url(https://images.unsplash.com/photo-1529641484336-ef35148bab06?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D); background-repeat: no-repeat;">
+       
+    
+   
+    <div class="row">
+        <div class="col-3"></div>
+        <div class="col-6">
+            <h4>Welcome to Hyla & Jackdaw !</h4>
+            <h5>-an clothing platform that you love!</h5>
+        </div>
+        <div class="col-2"></div>
+    </div>
+    
+    <div class="row">
+        <div class="col-4"></div>
+
+    
+    <div  class=" col-4 loginbox" style="background-image: url(https://images.unsplash.com/photo-1544365558-35aa4afcf11f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE0fHx8ZW58MHx8fHx8);">
+        <form action="" method="post" onsubmit="return validateForm()">
+        {% csrf_token %}
+       
+        <table>
+            <tr>
+            <th><h1>Login</h1></th>
+            </tr>
+            <tr>
+            <th><input type="email" id="email" name="email" placeholder="Enter your email"></th>
+            </tr>
+            <tr>
+            <th><input type="text" name="password" id="password" placeholder="Enter your pasword"></th>
+            </tr>
+            <tr>
+            <th><a href="{% url 'clothapp:forgetpassword' %}"><span>Forgot password?</span></a></th>
+            </tr>
+            <tr>
+            <th><button type="submit">Login</button></th>
+            </tr>
+            <tr>
+                <td><p id="Error" style="color:red;">{{msg}}</p></td>
+                </tr>
+            <tr>
+            <th><h6>Don't have an account? <span ><a href="{% url 'clothapp:signin' %}">Signup</a></span></h6></th>
+            </tr>
+           
+      </table>
+            
+       
+    </form>
+    </div>
+    <div class="col-4"></div>
+
+    
+        
+        
+        
+    </div>
+
+</div>
+    
+    {% endblock %}
+   
+

@@ -1,0 +1,66 @@
+{% extends 'clothapp/masterpage.html' %}
+{% load static %}
+
+{% block content %}
+
+<style>
+    .heading{
+        background-color:teal;
+    }
+</style>
+<body> 
+    
+
+
+<div class="heading">
+    <h1 style="font-style: italic;">About us</h1>
+</div>
+<div>
+    <p>THE H&J STORE caters to thoughtful shoppers who appreciate unique designs and top quality pieces you just can’t find anywhere else. We are constantly curating fresh new collections and looking for the next big thing our customers will love. Founded in Vienna in 2019, we are proud to be your Online Clothing Shop that you can rely on for our expert service and care.</p>
+</div>
+<div>
+    <p >*Our Mission is to make a difference through our branding by staying ahead of the fashion trends, defining style and giving customers what they want.</p>
+</div>
+
+<div>
+    <p >*Our Vision is to change the way our society connects with the fashion industry by providing our customers with products that are ethically and responsibly sourced.</p>
+</div>
+
+<div>
+    <p >*Our aim is to provide clothes for all sizes</p>
+</div>
+
+ <div>
+    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="{% static 'images/aboutus3.jpeg' %}" class="d-block w-100" alt="..." height="400px"  >
+          </div>
+          <div class="carousel-item">
+            <img src="{% static 'images/abouts1.jpeg' %}" class="d-block w-100" alt="..." height="400px">
+          </div>
+          <div class="carousel-item">
+            <img src="{% static 'images/aboutus2.jpeg' %}" class="d-block w-100" alt="..." height="400px">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    
+ </div>
+ 
+
+
+
+
+
+</body>
+
+
+{% endblock %}

@@ -1,0 +1,109 @@
+{% extends 'clothapp/masterpage.html' %}
+{% load static %}
+
+{% block content %}
+<style>
+    label{
+        color: white;
+    }
+    h4{
+        color: white;
+        font-family: 'Times New Roman', Times, serif;
+        font-style: italic;
+        font-weight:bold;
+        
+    }
+    h2{
+        color: white;
+        font-family: 'Times New Roman', Times, serif;
+        font-style: italic;
+        font-weight:bolder;
+        text-decoration: underline;
+        
+    }
+    h5{
+        color: white;
+        font-family: 'Times New Roman', Times, serif;
+        font-style: italic;
+        font-weight: lighter;
+    }
+    
+</style>
+<div class="container-fluid" style="background-image:url(https://images.unsplash.com/photo-1555096670-6987748e2cfc?q=80&w=2054&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);background-repeat: no-repeat;background-size: cover; height: 600px;">
+<div class="row">
+    <div class="col-3"></div>
+    <div class="col-6">
+        <h4>Welcome to Hyla & Jackdaw !</h3>
+        <h5>-an clothing platform that you love!</h4>
+        <h2>Sign Up</h2>
+    </div>
+    <div class="col-3"></div>
+</div>
+        
+      
+
+            
+<div class="row">
+        <div class="col-3"></div>
+                <div class="col-6 signupbox">
+                    <form action="" method="post" onsubmit="return signupform()" >
+                        {% csrf_token %}
+                    <table>
+                <tr>
+                <th><label for="">Name:</label></th>
+                <th><input type="text" name="name" id="name" placeholder="Enter your name">
+                </th>
+                <th><label for="">Date Of Birth:</label></th>
+                <th><input type="date" name="dob" id="dob" placeholder="Enter your date of birth"></th>
+
+                <tr>
+                <th><label for="">Mobile Number:</label></th>
+                <th><input type="text" name="mob" id="mob" placeholder="Enter your mobile number"></th>
+                <th><label for="">State:</label></th>
+                <th><input type="text" name="state" id="" placeholder="Enter your state"></th>
+                </tr>
+
+                
+
+                <tr>
+                <th><label for="">Address:</label></th>
+                <th><input type="text" name="address" id="" placeholder="Enter your adress"></th>
+                <th><label for="">Pincode:</label></th>
+                <th><input type="text" name="pincode" id="" placeholder="Enter your pincode"></th>
+                </tr>
+
+                <tr>
+                <th><label for="">Landmark:</label></th>
+                <th><input type="text" name="landmark" id="" placeholder="Enter your Landmark"></th>
+                <th><label for="">Email:</label></th>
+                <th><input type="email" name="email" id="email" placeholder="Enter your Email"></th>
+                </tr>
+
+                <tr>
+                    <th><label for="">Password:</label></th>
+                    <th><input type="text" name="password" id="p1" placeholder="Enter your password"></th>
+                    <th><label for="">Confirm Password</label></th>
+                    <th><input type="text" name="" id="p2" placeholder="Confirm your password"></th>
+                </tr>
+                <tr><td><p id="error1" style="color: red;"></p></td></tr>
+                <tr><td><p id="error2" style="color: red;"></p></td></tr>
+                <tr>
+                <th colspan="4"><button type="submit" onclick="signupform()">Lets Go</button></th>
+                </tr>
+   
+            
+            </table>
+        </form>
+            </div>
+               <div class="col-3"></div> 
+           
+            </div>
+
+        </div>
+        
+       
+
+            
+{% endblock %}
+
+    

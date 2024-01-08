@@ -1,0 +1,303 @@
+{% extends 'clothapp/masterpage.html' %}
+{% load static %}
+
+{% block content %}
+
+
+<div class="container">
+<div class="row">
+    
+{% for i in product %}
+    <div class="col-4">
+
+<div class="card" style="width: 18rem;">
+    <img src=" {{i.image.url}}" class="card-img-top" alt="..." height="280px">
+    <div class="card-body">
+      <h5 class="card-title">{{ i.title }}</h5>
+      <p class="card-text">{{ i.description }}  <a href=""></a></p>
+
+
+
+      <form method="post" action="{% url 'clothapp:add_to_cart' i.id %}">
+        {% csrf_token %}
+        <div class="quantity" style="display: none;">
+          <input type="number" name="quantity" id="quantity" value="1" min="1" required>
+
+        </div>
+        <button type="submit" class="btn btn-primary">Add to cart</button>
+
+      </form>
+      <p>{{i.price}}</p>
+    </div>
+  </div>
+</div>
+{% endfor %}
+
+
+<!-- <div class="col-4">
+
+    <div class="card" style="width: 18rem;">
+        <img src="{% static 'images/dress2.jpeg' %}" class="card-img-top" alt="..." height="280px">
+        <div class="card-body">
+          <h5 class="card-title">Floral dress</h5>
+          <p class="card-text">Rosalia Floral Mesh Long Dress available for all sizes </p>
+          <a href="#" class="btn btn-primary">Add to cart</a>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="col-4">
+
+        <div class="card" style="width: 18rem;">
+            <img src="{% static 'images/dress3.jpeg' %}" class="card-img-top" alt="..." height="280px">
+            <div class="card-body">
+              <h5 class="card-title">Floral dress</h5>
+              <p class="card-text">Rosalia Floral Mesh Long Dress available for all sizes </p>
+              <a href="#" class="btn btn-primary">Add to cart</a>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="col-4">
+
+            <div class="card" style="width: 18rem;">
+                <img src="{% static 'images/dress4.jpeg' %}" class="card-img-top" alt="..." height="280px">
+                <div class="card-body">
+                  <h5 class="card-title">Floral dress</h5>
+                  <p class="card-text">Rosalia white Mesh Long Dress available for all sizes </p>
+                  <a href="#" class="btn btn-primary">Add to cart</a>
+                </div>
+              </div>
+            </div>
+
+
+
+            <div class="col-4">
+
+                <div class="card" style="width: 18rem;">
+                    <img src="{% static 'images/dress5.jpeg' %}" class="card-img-top" alt="..." height="280px">
+                    <div class="card-body">
+                      <h5 class="card-title">Floral dress</h5>
+                      <p class="card-text">Rosalia white Mesh Long Dress available for all sizes </p>
+                      <a href="#" class="btn btn-primary">Add to cart</a>
+                    </div>
+                  </div>
+                </div>
+
+
+
+
+                <div class="col-4">
+
+                    <div class="card" style="width: 18rem;">
+                        <img src="{% static 'images/dress6.jpeg' %}" class="card-img-top" alt="..." height="280px">
+                        <div class="card-body">
+                          <h5 class="card-title">Floral dress</h5>
+                          <p class="card-text">Rosalia Floral Mesh Long Dress available for all sizes </p>
+                          <a href="#" class="btn btn-primary">Add to cart</a>
+                        </div>
+                      </div>
+                    </div>
+
+
+
+
+
+                    <div class="col-4">
+
+                        <div class="card" style="width: 18rem;">
+                            <img src="{% static 'images/dress7.jpeg' %}" class="card-img-top" alt="..." height="280px">
+                            <div class="card-body">
+                              <h5 class="card-title">Floral dress</h5>
+                              <p class="card-text">Rosalia Floral Mesh Long Dress available for all sizes</p>
+                              <a href="#" class="btn btn-primary">Add to cart</a>
+                            </div>
+                          </div>
+                        </div>
+
+
+
+                        <div class="col-4">
+
+                            <div class="card" style="width: 18rem;">
+                                <img src="{% static 'images/dress8.jpeg' %}" class="card-img-top" alt="..." height="280px">
+                                <div class="card-body">
+                                  <h5 class="card-title">Floral dress</h5>
+                                  <p class="card-text">Rosalia Floral Mesh Long Dress available for all sizes</p>
+                                  <a href="#" class="btn btn-primary">Add to cart</a>
+                                </div>
+                              </div>
+                            </div>
+
+
+
+                            <div class="col-4">
+
+                                <div class="card" style="width: 18rem;">
+                                    <img src="{% static 'images/dress9.jpeg' %}" class="card-img-top" alt="..." height="280px">
+                                    <div class="card-body">
+                                      <h5 class="card-title">Floral dress</h5>
+                                      <p class="card-text">Rosalia Floral Mesh Long Dress available for all sizes</p>
+                                      <a href="#" class="btn btn-primary">Add to cart</a>
+                                    </div>
+                                  </div>
+                                </div>
+
+
+                                <div class="col-4">
+
+                                    <div class="card" style="width: 18rem;">
+                                        <img src="{% static 'images/jdress10.jpeg' %}" class="card-img-top" alt="..." height="280px">
+                                        <div class="card-body">
+                                          <h5 class="card-title">Joggers set</h5>
+                                          <p class="card-text">women's jogger set available for all sizes</p>
+                                          <a href="#" class="btn btn-primary">Add to cart</a>
+                                        </div>
+                                      </div>
+                                    </div>
+
+
+                                    <div class="col-4">
+
+                                        <div class="card" style="width: 18rem;">
+                                            <img src="{% static 'images/jdress11.jpeg' %}" class="card-img-top" alt="..." height="280px">
+                                            <div class="card-body">
+                                              <h5 class="card-title">Joggers set</h5>
+                                              <p class="card-text">women's jogger set available for all sizes</p>
+                                              <a href="#" class="btn btn-primary">Add to cart</a>
+                                            </div>
+                                          </div>
+                                        </div>
+
+
+                                        <div class="col-4">
+
+                                            <div class="card" style="width: 18rem;">
+                                                <img src="{% static 'images/jdress12.jpeg' %}" class="card-img-top" alt="..." height="280px">
+                                                <div class="card-body">
+                                                  <h5 class="card-title">Joggers</h5>
+                                                  <p class="card-text">women's jogger set available for all sizes</p>
+                                                  <a href="#" class="btn btn-primary">Add to cart</a>
+                                                </div>
+                                              </div>
+                                            </div>
+
+
+                                            <div class="col-4">
+
+                                                <div class="card" style="width: 18rem;">
+                                                    <img src="{% static 'images/bdress13.jpeg' %}" class="card-img-top" alt="..." height="280px">
+                            
+                                                    <div class="card-body">
+                                                      <h5 class="card-title">Bodycon dress</h5>
+                                                      <p class="card-text">women bodycon dress available in all sizes</p>
+                                                      <a href="#" class="btn btn-primary">Add to cart</a>
+                                                    </div>
+                                                  </div>
+                                                </div>
+
+
+
+                                                <div class="col-4">
+
+                                                    <div class="card" style="width: 18rem;">
+                                                        <img src="{% static 'images/bdress14.jpeg' %}" class="card-img-top" alt="..." height="280px">
+                                                        <div class="card-body">
+                                                          <h5 class="card-title">Bodycon dress</h5>
+                                                          <p class="card-text">women bodycon dress available in all sizes</p>
+                                                          <a href="#" class="btn btn-primary">Add to cart</a>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+
+                                                    <div class="col-4">
+
+                                                        <div class="card" style="width: 18rem;">
+                                                            <img src="{% static 'images/bdress15.jpeg' %}" class="card-img-top" alt="..." height="280px">
+                                                            <div class="card-body">
+                                                              <h5 class="card-title">Bodycon dress</h5>
+                                                              <p class="card-text">women bodycon dress available in all sizes</p>
+                                                              <a href="#" class="btn btn-primary">Add to cart</a>
+                                                            </div>
+                                                          </div>
+                                                        </div>
+
+
+                                                        <div class="col-4">
+
+                                                            <div class="card" style="width: 18rem;">
+                                                                <img src="{% static 'images/judress16.jpeg' %}" class="card-img-top" alt="..." height="280px">
+                                                                <div class="card-body">
+                                                                  <h5 class="card-title">Jumpsuit</h5>
+                                                                  <p class="card-text">women jumpsuit dress available in all sizes</p>
+                                                                  <a href="#" class="btn btn-primary">Add to cart</a>
+                                                                </div>
+                                                              </div>
+                                                            </div>
+
+
+                                                            <div class="col-4">
+
+                                                                <div class="card" style="width: 18rem;">
+                                                                    <img src="{% static 'images/judress17.jpeg' %}" class="card-img-top" alt="..." height="280px">
+                                                                    <div class="card-body">
+                                                                      <h5 class="card-title">Jumpsuit</h5>
+                                                                      <p class="card-text">women jumpsuit dress available in all sizes</p>
+                                                                      <a href="#" class="btn btn-primary">Add to cart</a>
+                                                                    </div>
+                                                                  </div>
+                                                                </div>
+
+
+
+                                                                <div class="col-4">
+
+                                                                    <div class="card" style="width: 18rem;">
+                                                                        <img src="{% static 'images/judress18.jpeg' %}" class="card-img-top" alt="..." height="280px">
+                                                                        <div class="card-body">
+                                                                          <h5 class="card-title">Jumpsuit</h5>
+                                                                          <p class="card-text">women jumpsuit dress available in all sizes</p>
+                                                                          <a href="#" class="btn btn-primary">Add to cart</a>
+                                                                        </div>
+                                                                      </div>
+                                                                    </div>
+
+
+
+
+
+
+ -->
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

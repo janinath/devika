@@ -1,0 +1,309 @@
+{% extends 'clothapp/masterpage.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+  <div class="row">
+      
+  {% for i in product %}
+      <div class="col-4">
+  
+  <div class="card" style="width: 18rem;">
+      <img src=" {{i.image.url}}" class="card-img-top" alt="..." height="280px">
+      <div class="card-body">
+        <h5 class="card-title">{{ i.title }}</h5>
+        <p class="card-text">{{ i.description }}  <a href=""></a></p>
+
+        <form method="post" action="{% url 'clothapp:add_to_cart' i.id %}">
+          {% csrf_token %}
+          <div class="quantity" style="display: none;">
+            <input type="number" name="quantity" id="quantity" value="1" min="1" required>
+  
+          </div>
+          <button type="submit" class="btn btn-primary">Add to cart</button>
+  
+        </form>
+        
+        <p>{{i.price}}</p>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+
+        <!-- <div class="col-4">
+            <div class="card" style="width: 18rem;">
+              <img src="{% static 'images/bag1.jpeg' %}" class="card-img-top" alt="..." height="280px">
+              <div class="card-body">
+                <h5 class="card-title">Bags</h5>
+                <p class="card-text">Shop beautiful  bags</p>
+                <a href="#" class="btn btn-primary">Add to cart</a>
+              </div>
+            </div>
+            
+            </div>
+
+
+            <div class="col-4">
+                <div class="card" style="width: 18rem;">
+                  <img src="{% static 'images/bag2.jpeg' %}" class="card-img-top" alt="..." height="280px">
+                  <div class="card-body">
+                    <h5 class="card-title">Bags</h5>
+                    <p class="card-text">Shop beautiful  bags</p>
+                    <a href="#" class="btn btn-primary">Add to cart</a>
+                  </div>
+                </div>
+                
+                </div>
+
+
+                <div class="col-4">
+                    <div class="card" style="width: 18rem;">
+                      <img src="{% static 'images/nb.jpeg' %}" class="card-img-top" alt="..." height="280px">
+                      <div class="card-body">
+                        <h5 class="card-title">Bags</h5>
+                        <p class="card-text">Shop beautiful  bags</p>
+                        <a href="#" class="btn btn-primary">Add to cart</a>
+                      </div>
+                    </div>
+                    
+                    </div>
+
+
+                    <div class="col-4">
+                        <div class="card" style="width: 18rem;">
+                          <img src="{% static 'images/nb2.jpeg' %}" class="card-img-top" alt="..." height="280px">
+                          <div class="card-body">
+                            <h5 class="card-title">Bags</h5>
+                            <p class="card-text">Shop beautiful  bags</p>
+                            <a href="#" class="btn btn-primary">Add to cart</a>
+                          </div>
+                        </div>
+                        
+                        </div>
+
+
+                        <div class="col-4">
+                            <div class="card" style="width: 18rem;">
+                              <img src="{% static 'images/bag3.jpeg' %}" class="card-img-top" alt="..." height="280px">
+                              <div class="card-body">
+                                <h5 class="card-title">Bags</h5>
+                                <p class="card-text">Shop beautiful  bags</p>
+                                <a href="#" class="btn btn-primary">Add to cart</a>
+                              </div>
+                            </div>
+                            
+                            </div>
+                            <div class="col-4">
+                                <div class="card" style="width: 18rem;">
+                                  <img src="{% static 'images/bag4.jpeg' %}" class="card-img-top" alt="..." height="280px">
+                                  <div class="card-body">
+                                    <h5 class="card-title">Bags</h5>
+                                    <p class="card-text">Shop beautiful  bags</p>
+                                    <a href="#" class="btn btn-primary">Add to cart</a>
+                                  </div>
+                                </div>
+                                
+                                </div>
+
+                                <div class="col-4">
+                                  <div class="card" style="width: 18rem;">
+                                    <img src="{% static 'images/bag7.jpeg' %}" class="card-img-top" alt="..." height="280px">
+                                    <div class="card-body">
+                                      <h5 class="card-title">Bags</h5>
+                                      <p class="card-text">Shop beautiful  bags</p>
+                                      <a href="#" class="btn btn-primary">Add to cart</a>
+                                    </div>
+                                  </div>
+                                  
+                                  </div>
+
+
+                                  <div class="col-4">
+                                    <div class="card" style="width: 18rem;">
+                                      <img src="{% static 'images/bag8.jpeg' %}" class="card-img-top" alt="..." height="280px">
+                                      <div class="card-body">
+                                        <h5 class="card-title">Bags</h5>
+                                        <p class="card-text">Shop beautiful  bags</p>
+                                        <a href="#" class="btn btn-primary">Add to cart</a>
+                                      </div>
+                                    </div>
+                                    
+                                    </div>
+
+
+                                    <div class="col-4">
+                                      <div class="card" style="width: 18rem;">
+                                        <img src="{% static 'images/bag9.jpeg' %}" class="card-img-top" alt="..." height="280px">
+                                        <div class="card-body">
+                                          <h5 class="card-title">Bags</h5>
+                                          <p class="card-text">Shop beautiful  bags</p>
+                                          <a href="#" class="btn btn-primary">Add to cart</a>
+                                        </div>
+                                      </div>
+                                      
+                                      </div>
+
+                                      <div class="col-4">
+                                        <div class="card" style="width: 18rem;">
+                                          <img src="{% static 'images/bag10.jpeg' %}" class="card-img-top" alt="..." height="280px">
+                                          <div class="card-body">
+                                            <h5 class="card-title">Bags</h5>
+                                            <p class="card-text">Shop beautiful  bags</p>
+                                            <a href="#" class="btn btn-primary">Add to cart</a>
+                                          </div>
+                                        </div>
+                                        
+                                        </div>
+
+
+                                        <div class="col-4">
+                                          <div class="card" style="width: 18rem;">
+                                            <img src="{% static 'images/bag11.jpeg' %}" class="card-img-top" alt="..." height="280px">
+                                            <div class="card-body">
+                                              <h5 class="card-title">Bags</h5>
+                                              <p class="card-text">Shop beautiful  bags</p>
+                                              <a href="#" class="btn btn-primary">Add to cart</a>
+                                            </div>
+                                          </div>
+                                          
+                                          </div>
+
+
+                                          <div class="col-4">
+                                            <div class="card" style="width: 18rem;">
+                                              <img src="{% static 'images/bag12.jpeg' %}" class="card-img-top" alt="..." height="280px">
+                                              <div class="card-body">
+                                                <h5 class="card-title">Bags</h5>
+                                                <p class="card-text">Shop beautiful  bags</p>
+                                                <a href="#" class="btn btn-primary">Add to cart</a>
+                                              </div>
+                                            </div>
+                                            
+                                            </div>
+
+
+                                            <div class="col-4">
+                                              <div class="card" style="width: 18rem;">
+                                                <img src="{% static 'images/bag13.jpeg' %}" class="card-img-top" alt="..." height="280px">
+                                                <div class="card-body">
+                                                  <h5 class="card-title">Bags</h5>
+                                                  <p class="card-text">Shop beautiful  bags</p>
+                                                  <a href="#" class="btn btn-primary">Add to cart</a>
+                                                </div>
+                                              </div>
+                                              
+                                              </div>
+
+
+
+                                              <div class="col-4">
+                                                <div class="card" style="width: 18rem;">
+                                                  <img src="{% static 'images/bag14.jpeg' %}" class="card-img-top" alt="..." height="280px">
+                                                  <div class="card-body">
+                                                    <h5 class="card-title">Bags</h5>
+                                                    <p class="card-text">Shop beautiful  bags</p>
+                                                    <a href="#" class="btn btn-primary">Add to cart</a>
+                                                  </div>
+                                                </div>
+                                                
+                                                </div>
+
+
+                                                <div class="col-4">
+                                                  <div class="card" style="width: 18rem;">
+                                                    <img src="{% static 'images/bag15.jpeg' %}" class="card-img-top" alt="..." height="280px">
+                                                    <div class="card-body">
+                                                      <h5 class="card-title">Bags</h5>
+                                                      <p class="card-text">Shop beautiful  bags</p>
+                                                      <a href="#" class="btn btn-primary">Add to cart</a>
+                                                    </div>
+                                                  </div>
+                                                  
+                                                  </div>
+    
+
+
+
+
+
+
+
+
+ -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

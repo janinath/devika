@@ -1,0 +1,71 @@
+{% extends 'clothapp/masterpage.html' %}
+{% load static %}
+{% block content %}
+
+
+<style>
+    .discount{
+        color: white;
+        font-family: 'Times New Roman', Times, serif;
+        height: 200px;
+        width: 1210px;
+        background-color:darkseagreen;
+    }
+</style>
+
+<div class="discount">
+     <p style="font-weight: bold;">DON'T MISS OUT OUR MEGASALE EXTRAVAGANZA!</p>
+    <P style="font-weight: bold;">SHOP NOW AND UNLOCK EXCLUSIVE DISCOUNTS OF UPTO 50% ON ALL YOUR FAVORITE PRODUCTS</P> 
+    <h1 style="font-weight: bolder;">SALE!</h1>
+    
+</div>
+
+
+
+
+
+<div class="card-container">
+    
+    
+    <div class="card" style="width: 300px;" >
+        <P style="font-weight: bolder;">NEW ARRIVALS!</P>
+      <img src=" {% static 'images/naw1.jpeg' %}" alt="" >
+        <p>Find perfect dresses that fits you</p>
+        <a href="{% url 'clothapp:dresses' %}"><p class="catbtn" style="color: palevioletred;">Let's Go</p></a>
+        
+    </div>
+
+    
+    <div class="card" style="width: 300px;">
+        <P style="font-weight: bolder;">NEW ARRIVALS!</P>
+      <img src="{% static 'images/jaw1.jpeg' %}" alt="">
+        
+        <p>Discover stylish accessories</p>
+        <a href="{% url 'clothapp:accessories' %}"><p class="catbtn" style="color: palevioletred;">Let's Go</p></a>
+        
+    </div>
+
+    
+    <div class="card" style="width: 300px;">
+        <P style="font-weight: bolder;">NEW ARRIVALS!</P>
+      <img src="{% static 'images/bag1.jpeg' %}" alt="" height="420px">
+        
+        <p>Explore Fashionable bags</p>
+        <a href="{% url 'clothapp:bags' %}"><p class="catbtn" style="color: palevioletred;">Let's Go</p></a>
+       
+    </div>
+
+   
+</div>
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

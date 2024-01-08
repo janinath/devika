@@ -1,0 +1,107 @@
+{% extends 'clothapp/masterpage.html' %}
+{% load static %}
+{% block content %}
+
+<div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="{% static 'images/na1.jpeg' %}" class="d-block w-100" alt="..." height="400px"  >
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'images/nw4.jpeg' %}" class="d-block w-100" alt="..." height="400px">
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'images/nb2.jpeg' %}" class="d-block w-100" alt="..." height="400px">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+  
+
+
+    
+
+   <div class="mid">
+    <h3 class="animate-words"><img src="{% static 'images/luv4.jpeg' %}" alt="" height="50px">...Hyla and Jackdaw... <img src="{% static 'images/luv4.jpeg' %}" alt="" height="50px" ></h3>
+  
+   </div>
+   
+    
+    
+
+
+
+<div class="card-container">
+    
+    <div class="card" style="width: 300px;" >
+      <p>CLOTHING</p>
+      <img src="{% static 'images/cat1.jpeg' %}" alt="" >
+
+        <p>Find perfect dresses that fits you</p>
+        <button type="button" class="btn catbtn" data-bs-toggle="modal" data-bs-target="#staticBackdrop"  style="padding-left: 95px; font-family: 'Times New Roman', Times, serif;">Let's Go</button>
+        
+    </div>
+
+    
+    <div class="card" style="width: 300px;">
+      <P>ACCESSORIES</P>
+      <img src="{% static 'images/cat2.jpeg' %}" alt="">
+        
+        <p>Discover stylish accessories</p>
+        <button type="button" class="btn catbtn" data-bs-toggle="modal" data-bs-target="#staticBackdrop"  style="padding-left: 95px; font-family: 'Times New Roman', Times, serif;">Let's Go</button>
+    </div>
+
+    
+    <div class="card" style="width: 300px;">
+      <P>BAGS</P>
+      <img src="{% static 'images/cat3.jpeg' %}" alt="" height="420px">
+        
+        <p>Explore Fashionable bags</p>
+        <button type="button" class="btn catbtn" data-bs-toggle="modal" data-bs-target="#staticBackdrop" style="padding-left: 95px; font-family: 'Times New Roman', Times, serif;">Let's Go</button>
+       
+    </div>
+
+   
+</div>
+
+
+
+
+
+<div class="fashion">
+
+ <p >"Fashion is the armor to survive the reality of everyday life." - Bill Cunningham  
+</div>
+
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel"></h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h3 style="font-family: 'Times New Roman', Times, serif; font-weight: 100; color: black;">"Kindly login to access the dashboard for an enhanced and personalized experience"</h3>
+      </div>
+      <div class="modal-footer">
+        <a href="" class="btn btn-danger" data-bs-dismiss="modal">Close</a>
+        <a href="{% url 'clothapp:login' %}" class="btn " style="background-color: palevioletred; color: white;">Login</a>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+{% endblock %}
